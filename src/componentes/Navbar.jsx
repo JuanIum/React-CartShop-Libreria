@@ -1,8 +1,9 @@
 import React from "react";
 import CartWidget from "./CartWidget"
-import { Navbar  , Nav, Container} from "react-bootstrap/"
+import { Navbar, Nav, Container} from "react-bootstrap/"
 
 export default function NavBar({arrayDeLink}) { 
+
     return (
         <>
             <Navbar bg="light" expand="lg">
