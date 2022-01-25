@@ -4,7 +4,7 @@ import PromesaListaDeProductos from './ItemList'
 export default function ItemListContainer(props){
     return (
         <>
-            <p>{props.greeting}</p>
+            <p className="greeting">{props.greeting}</p>
             <PromesaListaDeProductos />
         </>
    )

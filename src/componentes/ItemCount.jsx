@@ -16,9 +16,9 @@ export default function ItemCount({tope}) {
     return (
 
         <>
-            <span onClick={()=>restar()}> - </span>
+            <button onClick={()=>restar()}> - </button>
             {cantidad}
-            <span onClick={()=>sumar()}> + </span>
+            <button onClick={()=>sumar()}> + </button>
             <br />
             <br />
         </>

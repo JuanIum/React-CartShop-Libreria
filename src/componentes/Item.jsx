@@ -1,21 +1,21 @@
 import React from "react";
-import ItemCount from "./ItemCount";
+import { Button, Card} from "react-bootstrap/"
 
-export default function Productos({item}){
+export default function Productos({ item }) {
 
-    function onAdd() {
-        alert(item.nombre + " " + item.stock);
-    }
-    
-    return(
-        <>
-            Producto:
-            <img src={item.src} alt="" />
-            <p>{item.nombre}</p>
-            <p>{item.precio}</p>
-            <p>{item.stock}</p>
-            <div onClick={() => onAdd()}> Agregar al carrito</div>
-            <ItemCount tope={item.stock}/>
+    return (
+        <>      
+            <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src= {item.src} />
+                <Card.Body>
+                    <Card.Title>{item.nombre}</Card.Title>
+                    <Card.Text>{item.precio}</Card.Text>
+                    <Card.Text>Stock: {item.stock}</Card.Text>
+                    <div className="botones">
+                    <Button variant="primary" className="btn1">Ver detalle</Button>
+                    </div>
+                </Card.Body>
+            </Card>
         </>
     )
 }

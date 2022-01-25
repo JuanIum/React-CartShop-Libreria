@@ -4,7 +4,11 @@ import Productos from "./Item.jsx"
 export default function PromesaListaDeProductos(){
     
     const [promesaCumplida, setPromesaCumplida] = useState(false);
-    const [arrayDeProductos, setArraydeProductos] = useState([{ id: 1, nombre: "La Mandrágora", precio: "$100", stock: 5, src: "./foto1.png" }, { id: 2, nombre: "El nombre de la Rosa", precio: "$150", stock: 6, src: "./foto2.png" }, { id: 3, nombre: "Drácula", precio: "$200", stock: 7, src: "./foto3.png" }])
+    const [arrayDeProductos, setArraydeProductos] = useState([
+        { id:"001", nombre: "La Mandrágora", precio: "$100", stock: 5, src: "./foto1.jpg" },
+        { id: "002", nombre: "El nombre de la Rosa", precio: "$150", stock: 6, src: "./foto2.jpg" },
+        { id: "003", nombre: "Drácula", precio: "$200", stock: 7, src: "./foto3.jpg" },
+        { id: "004", nombre: "Cuentos de amor, locura y muerte", categoria: "cuento", precio: "$250", stock: 8, src: "./foto4.jpg" }])
     
     const promesaDeProductosEnStock = new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -26,14 +30,19 @@ export default function PromesaListaDeProductos(){
     })
     
     return (
-    <>
-        {(promesaCumplida) ? 
-            <>
-                {
-                    arrayDeProductos.map(item => {
-                    return <Productos item = {item}/>})
-                }  
-            </>
-            : <>Procesando...</>}
-    </>
+        <>
+            <div className="flex">
+            {(promesaCumplida) ?
+                <>
+                    {
+                        arrayDeProductos.map(item => {
+                            return <Productos item={item} />
+                        })
+                    }
+
+                </>
+
+                : <>Procesando...</>}
+            </div>     
+        </>
 )}
