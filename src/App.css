@@ -26,6 +26,11 @@ font-weight: bold;
 background-color: #212529;
 }
 
+.estiloCont{
+padding-top: 10px;
+text-align: center;
+}
+
 #navBar{
 margin-left: 20%;
 padding-top: 20px;

@@ -16,11 +16,11 @@ export default function ItemCount({tope}) {
     return (
 
         <>
-            <button onClick={()=>restar()}> - </button>
-            {cantidad}
-            <button onClick={()=>sumar()}> + </button>
-            <br />
-            <br />
+            <div className="estiloCont">
+                <button onClick={() => restar()}> - </button>
+                {cantidad}
+                <button onClick={() => sumar()}> + </button>
+            </div>
         </>
 )
 
