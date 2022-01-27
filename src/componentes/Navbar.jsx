@@ -6,14 +6,14 @@ export default function NavBar({ arrayDeLink }) {
 
     return (
         <>
-            <Navbar bg="dark" variant="dark">
-                <Container>
-                    <Navbar.Brand href="/">Librería online</Navbar.Brand>
+            <Navbar bg="dark" variant="dark" >
+                <Container >
+                    <Navbar.Brand href="/">Librería <br/> online</Navbar.Brand>
                     <Nav className="me-auto">
                         {arrayDeLink.map(link => {
-                            return <Nav.Link href ={link.enlace}> {link.seccion}</Nav.Link>
+                            return <Nav.Link id = "navBar" href ={link.enlace}> {link.seccion}</Nav.Link>
                         })}
-                        <Nav.Link href="#link"><CartWidget /> </Nav.Link>
+                        <Nav.Link href="#link" id="navCart"><CartWidget /> </Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>

@@ -5,10 +5,10 @@ export default function Productos({ item }) {
 
     return (
         <>      
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src= {item.src} />
+            <Card style={{ width: '18rem' }} id = "centrarTexto">
+                <Card.Img id = "imgProducto" variant="top" src= {item.src} />
                 <Card.Body>
-                    <Card.Title>{item.nombre}</Card.Title>
+                    <Card.Title id = "tituloProducto">{item.nombre}</Card.Title>
                     <Card.Text>{item.precio}</Card.Text>
                     <Card.Text>Stock: {item.stock}</Card.Text>
                     <div className="botones">

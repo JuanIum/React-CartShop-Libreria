@@ -26,7 +26,7 @@ import ItemCount from "./ItemCount";
                            </Card>
                        }</>
                        :
-                       <>Loading...</>
+                       <>Procesando...</>
                 }
             </div>
         </>

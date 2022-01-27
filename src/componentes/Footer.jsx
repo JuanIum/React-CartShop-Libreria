@@ -8,12 +8,12 @@ export default function Footer({ arrayDeLink }) {
         <>
             <Navbar bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand href="#home">Librería online</Navbar.Brand>
+                    <Navbar.Brand href="./">Librería online</Navbar.Brand>
                     <Nav className="me-auto">
                         {arrayDeLink.map(link => {
                             return <Nav.Link href={link.enlace}> {link.seccion}</Nav.Link>
                         })}
-                        <Nav.Link href="#link"><CartWidget /> </Nav.Link>
+                        <Nav.Link href="./"><CartWidget /> </Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
