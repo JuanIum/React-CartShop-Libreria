@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { Card } from "react-bootstrap";
 
-export default function Categoria() {
+export default function Categoria({productos}) {
 
     const { categoriaId } = useParams();
     const [arrayDeProductos, setArraydeProductos] = useState([]);
@@ -30,7 +30,7 @@ export default function Categoria() {
             <div  className="flex">
                 {arrayDeProductos.map(item =>
                     <Card style={{ width: '18rem' }} id="itemCategoria">
-                        <Card.Img id="imgProducto" variant="top" src={item.src} />
+                        <Card.Img id="imgProducto" variant="top" src= {item.src} />
                         <Card.Body>
                             <Card.Title id="tituloProducto">{item.nombre}</Card.Title>
                             <Card.Text>Autor/a: {item.autor}</Card.Text>
@@ -40,4 +40,4 @@ export default function Categoria() {
             </div>
         </>
     )
-}
+} 
