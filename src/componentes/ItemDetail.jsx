@@ -1,11 +1,15 @@
-import React from "react";
-import { Button, Card} from "react-bootstrap/"
+import React, { useState } from "react";
+import {Button, Card} from "react-bootstrap/"
 import ItemCount from "./ItemCount";
     
-   export default function ItemDetail({ producto }) {
-
-      function onAdd() {
-        alert(producto.nombre + " " + producto.stock);
+export default function ItemDetail({ producto }) {
+       
+    
+    const [mostrarBoton, setMostrarBoton] = useState(true);
+       
+      function onAdd({cantidad}) {
+          alert("Quiero agregar " + cantidad + " ejemplares de " + producto.nombre);
+          setMostrarBoton(false);
     }  
        return (
         <>
@@ -18,10 +22,14 @@ import ItemCount from "./ItemCount";
                                    <Card.Title>{producto.nombre}</Card.Title>
                                    <Card.Text>{producto.precio}</Card.Text>
                                    <Card.Text>Stock: {producto.stock}</Card.Text>
-                                   <div className="botones">
-                                       <Button variant="primary" onClick={() => onAdd()}>Agregar al carrito</Button>
-                                   </div>
-                                   <ItemCount tope={producto.stock} />
+                                   {
+                                       (mostrarBoton) ?
+                                           <ItemCount tope={producto.stock} onAdd={onAdd} />
+                                           :
+                                           <div className="botones">
+                                               <Button variant="primary" href ="/carrito">Terminar mi compra</Button>                    
+                                           </div>                                       
+                                   }
                                </Card.Body>
                            </Card>
                        }</>

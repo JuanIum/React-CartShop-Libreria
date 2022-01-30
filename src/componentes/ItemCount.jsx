@@ -1,9 +1,10 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import { Button} from "react-bootstrap/"
 
-export default function ItemCount({tope}) {
+export default function ItemCount({tope, onAdd}) {
 
     
-    const [cantidad, setCantidad] = useState(0);
+    const [cantidad, setCantidad] = useState(1);
     
     function sumar() {
         if(cantidad < tope) setCantidad(cantidad + 1)
@@ -16,6 +17,9 @@ export default function ItemCount({tope}) {
     return (
 
         <>
+            <div className="botones">
+                <Button variant="primary" onClick={() => onAdd({cantidad})}>Agregar al carrito</Button>
+            </div>
             <div className="estiloCont">
                 <button onClick={() => restar()}> - </button>
                 {cantidad}

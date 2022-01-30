@@ -8,6 +8,7 @@ export default function CartWidget(){
             <div className={Container}>
             <img src={carrito} alt="" />
             </div>
+            
          </>
    )
 } 

@@ -13,7 +13,7 @@ export default function NavBar({ arrayDeLink }) {
                         {arrayDeLink.map(link => {
                             return <Nav.Link id = "navBar" href ={link.enlace}> {link.seccion}</Nav.Link>
                         })}
-                        <Nav.Link href="#link" id="navCart"><CartWidget /> </Nav.Link>
+                        <Nav.Link href="/carrito" id="navCart"><CartWidget /> </Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
