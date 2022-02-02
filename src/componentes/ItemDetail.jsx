@@ -1,15 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {Button, Card} from "react-bootstrap/"
 import ItemCount from "./ItemCount";
+import { carritoContext } from "../contex/CarritoProvider";
     
 export default function ItemDetail({ producto }) {
        
+    const { addCarrito } = useContext(carritoContext);
     
     const [mostrarBoton, setMostrarBoton] = useState(true);
        
-      function onAdd({cantidad}) {
+    function onAdd({ cantidad }) {
+          
           alert("Quiero agregar " + cantidad + " ejemplares de " + producto.nombre);
           setMostrarBoton(false);
+          addCarrito(producto, cantidad);
+
     }  
        return (
         <>

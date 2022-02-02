@@ -22,6 +22,41 @@ color: whitesmoke;
 font-weight: bold;
 }
 
+
+.mostrarCarrito{
+
+background-color: tomato;
+
+}
+
+#contadorCart{
+display: flex;
+flex-direction: row;
+}
+
+#contador{
+background-color: gray;
+border-radius: 10px;
+font-weight: bold;
+padding: 6%;
+margin-left: 15%;
+align-self: center;
+justify-self: center;
+height: auto;
+}
+
+#btn{
+padding: 3%;
+align-self: center;
+text-decoration: none;
+width: max-content;
+background-color: #0d6efd;
+color: whitesmoke;
+border: #0e61df solid 2px;
+font-weight: bold;
+border-radius: 6px;
+}
+
 #colorFooter{
 background-color: #212529;
 }

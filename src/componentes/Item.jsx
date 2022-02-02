@@ -1,7 +1,8 @@
 import React from "react";
-import { Button, Card} from "react-bootstrap/"
+import {Card} from "react-bootstrap/"
+import {Link} from "react-router-dom";
 
-export default function Productos({ item }) {
+export default function Item({ item }) {
 
     return (
         <>      
@@ -12,7 +13,7 @@ export default function Productos({ item }) {
                     <Card.Text>{item.precio}</Card.Text>
                     <Card.Text>Stock: {item.stock}</Card.Text>
                     <div className="botones">
-                    <Button variant="primary" className="btn1">Ver detalle</Button>
+                    <Link id="btn" to={`item/${item.id}`}>Ver detalle</Link>
                     </div>
                 </Card.Body>
             </Card>

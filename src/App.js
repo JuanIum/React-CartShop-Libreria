@@ -5,15 +5,18 @@ import Footer from "./componentes/Footer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ItemListContainer from "./componentes/ItemListContainer";
 import ItemDetailContainer from "./componentes/ItemDetailContainer";
-import Categoria from './componentes/Categoria';
+import Categoria from "./componentes/Categoria";
+import Carrito from "./componentes/Carrito";
+import CarritoProvider from './contex/CarritoProvider';
 
 function App() {
 
-  const arrayDeLink = [{ seccion: "Home", enlace: "/" }, { seccion: "Productos", enlace: "/productos" }, { seccion: "Contáctenos", enlace: "/contacto" }];
+  const arrayDeLink = [{ seccion: "Home", enlace: "/" }, { seccion: "Novelas", enlace: "/categoria/novela" }, { seccion: "Cuentos", enlace: "/categoria/cuento" }, { seccion: "Contáctenos", enlace: "/contacto" }];
   
   return (
         <>
-        
+        <CarritoProvider>
+
         <BrowserRouter>
           
           <Navbar arrayDeLink={arrayDeLink} /> 
@@ -22,7 +25,6 @@ function App() {
         
             <Route exact path= "/">
               <ItemListContainer greeting="Libros disponibles" />
-              <Categoria />
             </Route>
             
             <Route exact path="/item/:itemId">
@@ -33,10 +35,16 @@ function App() {
               <Categoria />
             </Route>
           
+            <Route path="/carrito">
+              <Carrito />
+            </Route>
+
           </Switch>
           <Footer arrayDeLink={arrayDeLink}/>
-      </BrowserRouter>
-      
+
+        </BrowserRouter>
+
+        </CarritoProvider>        
     </>
   );
 }

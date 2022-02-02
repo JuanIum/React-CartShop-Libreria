@@ -1,5 +1,4 @@
 import React from "react";
-import CartWidget from "./CartWidget";
 import { Nav } from "react-bootstrap/";
 
 export default function Footer({ arrayDeLink }) {
@@ -22,7 +21,7 @@ export default function Footer({ arrayDeLink }) {
                                 {arrayDeLink.map(link => {
                                     return <Nav.Link href={link.enlace} id="letrasBlancas"> {link.seccion}</Nav.Link>
                                 })}
-                                <Nav.Link href="./" id="letrasBlancas"><CartWidget /> </Nav.Link>
+                                <Nav.Link href="/carrito" id="letrasBlancas">Carrito</Nav.Link>
                             </ul>
                         </div>
 

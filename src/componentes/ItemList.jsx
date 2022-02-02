@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import Productos from "./Item.jsx"
+import Item from "./Item.jsx"
 
 export default function PromesaListaDeProductos(){
     
@@ -36,7 +36,7 @@ export default function PromesaListaDeProductos(){
                 <>
                     {
                         arrayDeProductos.map(item => {
-                            return <Productos item={item} />
+                            return <Item key={item.id} item={item} />
                         })
                     }
 
