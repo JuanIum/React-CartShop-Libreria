@@ -13,7 +13,7 @@ export default function PromesaListaDeProductos(){
     const promesaDeProductosEnStock = new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(arrayDeProductos);
-        }, 3000)
+        }, 1000)
     });
 
     useEffect(() => {

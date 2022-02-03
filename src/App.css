@@ -7,6 +7,12 @@
   pointer-events: none;
 }
 
+#navLogo{
+color: blanchedalmond;
+font-weight: bold;
+text-decoration: none;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -80,6 +86,7 @@ height: auto;
 }
 
 #imgProducto {
+margin-top: 3%;
 height: 200px;
 width: 150px;
 display: flex;

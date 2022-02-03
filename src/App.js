@@ -11,7 +11,7 @@ import CarritoProvider from './contex/CarritoProvider';
 
 function App() {
 
-  const arrayDeLink = [{ seccion: "Home", enlace: "/" }, { seccion: "Novelas", enlace: "/categoria/novela" }, { seccion: "Cuentos", enlace: "/categoria/cuento" }, { seccion: "Contáctenos", enlace: "/contacto" }];
+  const arrayDeLink = [{ seccion: "Novelas", enlace: "/categoria/novela" }, { seccion: "Cuentos", enlace: "/categoria/cuento" }, { seccion: "Contáctenos", enlace: "/contacto" }];
   
   return (
         <>

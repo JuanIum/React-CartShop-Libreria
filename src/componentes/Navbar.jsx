@@ -1,6 +1,7 @@
 import React from "react";
-import CartWidget from "./CartWidget"
-import { Navbar, Nav, Container } from "react-bootstrap/"
+import { Link } from "react-router-dom";
+import CartWidget from "./CartWidget";
+import { Navbar, Nav, Container } from "react-bootstrap/";
 
 export default function NavBar({ arrayDeLink }) {
 
@@ -8,7 +9,7 @@ export default function NavBar({ arrayDeLink }) {
         <>
             <Navbar bg="dark" variant="dark" >
                 <Container >
-                    <Navbar.Brand href="/">Librería <br/> online</Navbar.Brand>
+                    <Navbar.Brand><Link id="navLogo" to = "/">Librería <br/> online</Link></Navbar.Brand>
                     <Nav className="me-auto">
                         {arrayDeLink.map(link => {
                             return <Nav.Link id = "navBar" href ={link.enlace}> {link.seccion}</Nav.Link>
