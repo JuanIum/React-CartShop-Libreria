@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext } from "react";
-import carritoContext from "../contex/CarritoProvider"
+import { carritoContext } from "../contex/CarritoProvider"
 
 const Carrito = () => {
 

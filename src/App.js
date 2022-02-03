@@ -8,6 +8,7 @@ import ItemDetailContainer from "./componentes/ItemDetailContainer";
 import Categoria from "./componentes/Categoria";
 import Carrito from "./componentes/Carrito";
 import CarritoProvider from './contex/CarritoProvider';
+import Contacto from './componentes/Contacto';
 
 function App() {
 
@@ -39,6 +40,10 @@ function App() {
               <Carrito />
             </Route>
 
+            <Route exact path= "/contacto">
+              <Contacto />
+            </Route>
+            
           </Switch>
           <Footer arrayDeLink={arrayDeLink}/>
 
