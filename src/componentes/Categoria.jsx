@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { Card } from "react-bootstrap";
 
@@ -23,10 +23,6 @@ export default function Categoria({productos}) {
 
     return (
         <>
-            <div id="tituloCategoria">
-                <Link to={"/categoria/novela"} id = "sinEstilo">Novelas</Link>
-                <Link to={"/categoria/cuento"} id = "sinEstilo">Cuentos</Link>
-            </div>
             <div  className="flex">
                 {arrayDeProductos.map(item =>
                     <Card style={{ width: '18rem' }} id="itemCategoria">

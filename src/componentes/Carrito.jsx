@@ -2,9 +2,9 @@ import React from "react";
 import { useContext } from "react";
 import carritoContext from "../contex/CarritoProvider"
 
-export default function Carrito() {
+const Carrito = () => {
 
-    const {carrito} = useContext( carritoContext );
+    const {carrito} = useContext(carritoContext);
     console.log(carrito);
     
     return (
@@ -16,3 +16,4 @@ export default function Carrito() {
 
 }
 
+export default Carrito;

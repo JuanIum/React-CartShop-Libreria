@@ -13,7 +13,7 @@ export default function ItemDetail({ producto }) {
           
           alert("Quiero agregar " + cantidad + " ejemplares de " + producto.nombre);
           setMostrarBoton(false);
-          addCarrito(producto, cantidad);
+          addCarrito(producto);
 
     }  
        return (
