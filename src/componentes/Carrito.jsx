@@ -1,16 +1,24 @@
-import React from "react";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { carritoContext } from "../contex/CarritoProvider"
+import CarritoItem from "./CarritoItem"
+import {Link} from "react-router-dom"
 
 const Carrito = () => {
 
-    const {carrito} = useContext(carritoContext);
-    console.log(carrito);
+    const {carrito, borrarCarrito} = useContext(carritoContext);
     
     return (
         <>
-            <p>carrito</p>
-            <div className="mostrarCarrito">aquí se renderiza el acumulado del carrito</div>
+            {carrito.lenght === 0 ?
+            <div>
+                <p>No agregaste nada al carrito</p>
+                <Link to="./" >Volver a la página principal</Link>
+            </div>
+            :
+            <div className="mostrarCarrito">
+                {carrito.map(element => <CarritoItem key={element.item.id} producto={element.item} />)}
+                <button onClick={() => { borrarCarrito() }}>Vaciar Carrito</button>
+            </div>}          
         </>
 )
 
