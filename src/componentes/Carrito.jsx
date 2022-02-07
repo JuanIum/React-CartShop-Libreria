@@ -9,14 +9,14 @@ const Carrito = () => {
     
     return (
         <>
-            {carrito.lenght === 0 ?
+            {carrito.length === 0 ?
             <div>
                 <p>No agregaste nada al carrito</p>
-                <Link to="./" >Volver a la página principal</Link>
+                <Link to="/" >Volver a la página principal</Link>
             </div>
             :
             <div className="mostrarCarrito">
-                {carrito.map(element => <CarritoItem key={element.item.id} producto={element.item} />)}
+                {carrito.map(element => <CarritoItem key={element.item.id} producto={element} />)}
                 <button onClick={() => { borrarCarrito() }}>Vaciar Carrito</button>
             </div>}          
         </>

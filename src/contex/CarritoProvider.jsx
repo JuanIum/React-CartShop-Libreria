@@ -5,6 +5,7 @@ export const carritoContext = createContext();
 const CarritoProvider = ({ children }) => {
 
     const [carrito, setCarrito] = useState([]);
+
     
     const enCarrito = (id) => { 
     
@@ -20,7 +21,6 @@ const CarritoProvider = ({ children }) => {
         } else {
             setCarrito([...carrito, { item: producto, cantidad: cantidad }]);             
         }
-    
     }
 
     const borrarProducto = (id) =>{

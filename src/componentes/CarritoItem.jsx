@@ -6,8 +6,6 @@ const CarritoItem = ({producto}) => {
     
         const {borrarProducto} = useContext(carritoContext);
 
-
-    
     return (
         <>
             <div key={producto.item.id}>

@@ -12,9 +12,9 @@ export default function NavBar({ arrayDeLink }) {
                     <Navbar.Brand><Link id="navLogo" to = "/">Librería <br/> online</Link></Navbar.Brand>
                     <Nav className="me-auto">
                         {arrayDeLink.map(link => {
-                            return <Nav.Link id = "navBar" href ={link.enlace}> {link.seccion}</Nav.Link>
+                            return <Link id = "navBar" to ={link.enlace}> {link.seccion}</Link>
                         })}
-                        <Nav.Link href="/carrito" id="navCart"><CartWidget /> </Nav.Link>
+                        <Link to="/carrito" id="navCart"><CartWidget /> </Link>
                     </Nav>
                 </Container>
             </Navbar>
