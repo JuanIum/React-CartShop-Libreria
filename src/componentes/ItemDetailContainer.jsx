@@ -30,24 +30,13 @@ export default function ItemDetailContainer() {
         }
 
         console.log('item found');
-        setItem({ id: doc.id, ...doc.data() });
+        setProducto({ id: doc.id, ...doc.data() });
 
       })
       .catch((err)=>{
         console.log(err);
       })            
-
-       // let listadoDeProductos = [
-         //       { id: "001", nombre: "La Mandrágora", precio: "$100", stock: 5, src: "./foto1.jpg" },
-           //     { id: "002", nombre: "El nombre de la Rosa", precio: "$150", stock: 6, src: "./foto2.jpg" },
-             //   { id: "003", nombre: "Drácula", precio: "$200", stock: 7, src: "./foto3.jpg" },
-               // { id: "004", nombre: "Cuentos de amor, locura y muerte", categoria: "cuento", precio: "$250", stock: 8, src: "./foto4.jpg" }];
-
-       //     listadoDeProductos = listadoDeProductos.filter(item => item.id === itemId);
-     //       let miProducto = listadoDeProductos[0];
-         //   setProducto(miProducto);
-
-        
+      
     }, [itemId])
 
         return (

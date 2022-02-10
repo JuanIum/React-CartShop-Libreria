@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Card } from "react-bootstrap";
 import { getFirestore } from '../firebase/firebase'
 
-export default function Categoria({productos}) {
+export default function Categoria() {
 
     const { categoriaId } = useParams();
     const [arrayDeProductos, setArraydeProductos] = useState([]);
@@ -12,9 +12,9 @@ export default function Categoria({productos}) {
         
         
     const db = getFirestore();
-    const itemCollection = db.collection("items")
-
-    itemCollection.get()
+    const itemCollection = db.collection("items").where("categoria", "===", categoriaId);
+    
+        itemCollection.get()
       .then((querySnapShot) => {
 
         if (querySnapShot.size === 0) {
@@ -33,8 +33,6 @@ export default function Categoria({productos}) {
         console.log(err);
       })  
         
-        setArraydeProductos(productos.filter(item => item.categoria === categoriaId));
-        
         console.log(categoriaId)
 
     }, [categoriaId]);
@@ -46,7 +44,7 @@ export default function Categoria({productos}) {
                     <Card style={{ width: '18rem' }} id="itemCategoria">
                         <Card.Img id="imgProducto" variant="top" src= {item.src} />
                         <Card.Body>
-                            <Card.Title id="tituloProducto">{item.nombre}</Card.Title>
+                            <Card.Title id="tituloProducto">{item.titulo}</Card.Title>
                             <Card.Text>Autor/a: {item.autor}</Card.Text>
                         </Card.Body>
                     </Card>

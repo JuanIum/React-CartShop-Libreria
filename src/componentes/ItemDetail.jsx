@@ -12,7 +12,7 @@ export default function ItemDetail({ producto }) {
        
     function onAdd({ cantidad }) {
           
-          alert("Quiero agregar " + cantidad + " ejemplares de " + producto.nombre);
+          alert("Quiero agregar " + cantidad + " ejemplares de " + producto.titulo);
           addCarrito(producto, cantidad);
           setMostrarBoton(false);
         
@@ -25,7 +25,7 @@ export default function ItemDetail({ producto }) {
                            <Card style={{ width: '18rem' }}>
                                <Card.Img variant="top" src={producto.src} />
                                <Card.Body>
-                                   <Card.Title>{producto.nombre}</Card.Title>
+                                   <Card.Title>{producto.titulo}</Card.Title>
                                    <Card.Text>{producto.precio}</Card.Text>
                                    <Card.Text>Stock: {producto.stock}</Card.Text>
                                    {
