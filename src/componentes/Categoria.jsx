@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { Card } from "react-bootstrap";
+import { getFirestore } from '../firebase/firebase'
 
 export default function Categoria({productos}) {
 
@@ -9,11 +10,28 @@ export default function Categoria({productos}) {
        
     useEffect(() => {
         
-        const productos = [
-            { id: "001", nombre: "La Mandrágora", autor: "Hanz Heinz Ewers", categoria: "novela", precio: "$100", stock: 5, src:"./foto1.jpg"},
-            { id: "002", nombre: "El nombre de la Rosa", autor: "Humberto Eco", categoria: "novela", precio: "$150", stock: 6, src:"./foto2.jpg"},
-            { id: "003", nombre: "Drácula", autor: "Brahm Stoker", categoria: "novela", precio: "$200", stock: 7, src: "./foto3.jpg"},
-            { id: "004", nombre: "Cuentos de amor, locura y muerte", autor: "Horacio Quiroga", categoria: "cuento", precio: "$250", stock: 8, src:"./foto4.jpg"}];
+        
+    const db = getFirestore();
+    const itemCollection = db.collection("items")
+
+    itemCollection.get()
+      .then((querySnapShot) => {
+
+        if (querySnapShot.size === 0) {
+          console.log('no hay documentos con en ese query');
+          return
+        } 
+
+        console.log('hay documentos');
+        setArraydeProductos(querySnapShot.docs.map((doc)=> {
+            return { id: doc.id, ...doc.data() }
+        }
+        ));
+        
+      })
+      .catch((err)=>{
+        console.log(err);
+      })  
         
         setArraydeProductos(productos.filter(item => item.categoria === categoriaId));
         

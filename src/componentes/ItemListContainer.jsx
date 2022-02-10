@@ -1,11 +1,11 @@
 import React from "react";
-import PromesaListaDeProductos from './ItemList'
+import ItemList from './ItemList'
 
 export default function ItemListContainer(props){
     return (
         <>
             <p className="greeting">{props.greeting}</p>
-            <PromesaListaDeProductos />
+            <ItemList />
         </>
    )
 } 
