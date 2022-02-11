@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import { Card } from "react-bootstrap";
+import Item from "./Item.jsx"
 import { getFirestore } from '../firebase/firebase'
 
 export default function Categoria() {
@@ -12,7 +12,7 @@ export default function Categoria() {
         
         
     const db = getFirestore();
-    const itemCollection = db.collection("items").where("categoria", "===", categoriaId);
+    const itemCollection = db.collection("items").where("categoria", "==", categoriaId);
     
         itemCollection.get()
       .then((querySnapShot) => {
@@ -37,19 +37,14 @@ export default function Categoria() {
 
     }, [categoriaId]);
 
-    return (
+ return (
         <>
-            <div  className="flex">
-                {arrayDeProductos.map(item =>
-                    <Card style={{ width: '18rem' }} id="itemCategoria">
-                        <Card.Img id="imgProducto" variant="top" src= {item.src} />
-                        <Card.Body>
-                            <Card.Title id="tituloProducto">{item.titulo}</Card.Title>
-                            <Card.Text>Autor/a: {item.autor}</Card.Text>
-                        </Card.Body>
-                    </Card>
-                )}
-            </div>
+            <div className="flex">
+                    {
+                        arrayDeProductos.map(item => {
+                            return <Item key={item.id} item={item} />
+                        })
+                    }
+            </div>     
         </>
-    )
-} 
+)}
