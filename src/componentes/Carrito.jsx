@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
-import { carritoContext } from "../contex/CarritoProvider"
-import CarritoItem from "./CarritoItem"
-import {Link} from "react-router-dom"
+import { carritoContext } from "../contex/CarritoProvider";
+import CarritoItem from "./CarritoItem";
+import { Link } from "react-router-dom";
+import Contacto from "./Contacto";
+import TestUpdate from "./TestUpdate";
 
 const Carrito = () => {
 
@@ -16,8 +18,10 @@ const Carrito = () => {
             </div>
             :
             <div className="mostrarCarrito">
-                {carrito.map(element => <CarritoItem key={element.item.id} producto={element} />)}
-                <button onClick={() => { borrarCarrito() }}>Vaciar Carrito</button>
+                    {carrito.map(element => <CarritoItem key={element.item.id} producto={element} />)}
+                    <Contacto />
+                    <TestUpdate />
+                    <button onClick={() => { borrarCarrito() }}>Vaciar Carrito</button>
             </div>}          
         </>
 )
