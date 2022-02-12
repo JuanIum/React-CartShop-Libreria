@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import firebase from "firebase";
 import { getFirestore } from '../firebase/firebase';
 
 export default function TestUpdate() {
