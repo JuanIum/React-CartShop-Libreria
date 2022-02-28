@@ -5,7 +5,7 @@ import { getFirestore } from '../firebase/firebase'
 
 export default function Contacto() {
 
-    const {carrito} = useContext(carritoContext);
+    const {carrito, sumaTotal} = useContext(carritoContext);
     
     const [orderId, setOrderId] = useState('');
 
@@ -31,7 +31,7 @@ export default function Contacto() {
                 mobile: mobileRef.current.value,
             },
             items: carrito,
-            total: 1500,
+            total: sumaTotal(),
             date: firebase.firestore.Timestamp.fromDate(new Date())
         }
 
@@ -49,7 +49,7 @@ export default function Contacto() {
     return (
 
         <>
-            {orderId && (<h1>Felicitaciones tu order es {orderId}</h1>)}
+            {orderId && (<h1>Felicitaciones tu order se registro bajo el ID: {orderId}</h1>)}
 
             <div>
                 <h3>Ingresa tus datos:</h3>
@@ -72,7 +72,7 @@ export default function Contacto() {
                 <input type="text" name="address" ref={addressRef} placeholder="Direccion" />
                 <br />
 
-                <button onClick={() => handleClick()} >Vamos!</button>
+                <button onClick={() => handleClick()} >Registrarse</button>
             </div>
         </>
     )

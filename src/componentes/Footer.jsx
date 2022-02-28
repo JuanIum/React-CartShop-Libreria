@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav } from "react-bootstrap/";
+import { Link } from "react-router-dom";
 
 export default function Footer({ arrayDeLink }) {
 
@@ -19,9 +19,9 @@ export default function Footer({ arrayDeLink }) {
                             <h5 className="text-uppercase" id="letrasBlancas">Enlaces</h5>
                             <ul className="list-unstyled">
                                 {arrayDeLink.map(link => {
-                                    return <Nav.Link href={link.enlace} id="letrasBlancas"> {link.seccion}</Nav.Link>
+                                    return <Link to={link.enlace} id="letrasBlancas"> {link.seccion}</Link>
                                 })}
-                                <Nav.Link href="/carrito" id="letrasBlancas">Carrito</Nav.Link>
+                                <Link to="/carrito" id="letrasBlancas">Carrito</Link>
                             </ul>
                         </div>
 

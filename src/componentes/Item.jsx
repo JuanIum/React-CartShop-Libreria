@@ -26,7 +26,7 @@ export default function Item({ item }) {
                     <Card.Text>{item.precio}</Card.Text>
                     <Card.Text>Stock: {item.stock}</Card.Text>
                     <div className="botones">
-                    <Link id="btn" to={`item/${item.id}`}>Ver detalle</Link>
+                    <Link id="btn" to={`/item/${item.id}`}>Ver detalle</Link>
                     </div>
                     <div>
                                  {
