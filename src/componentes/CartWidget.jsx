@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import carritoImg from "./carritoImg.png";
+import carritoImg from "../imgProductos/carritoImg.png";
 import { Container } from "react-bootstrap";
 import { carritoContext } from "../contex/CarritoProvider";
 

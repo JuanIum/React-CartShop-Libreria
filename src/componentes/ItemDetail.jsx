@@ -23,10 +23,13 @@ export default function ItemDetail({ producto }) {
                    {(producto.id) ?
                        <>{
                            <Card style={{ width: '18rem' }}>
-                               <Card.Img variant="top" src={producto.src} />
+                               <Card.Img variant="top" src={producto.imagen} />
                                <Card.Body>
-                                   <Card.Title>{producto.titulo}</Card.Title>
-                                   <Card.Text>{producto.precio}</Card.Text>
+                                   <Card.Title>Título: {producto.titulo}</Card.Title>
+                                   <Card.Text>Autor/a: {producto.autor}</Card.Text>
+                                   <Card.Text>Año de publicación: {producto.año}</Card.Text> 
+                                   <Card.Text><><p>Sinopsis:</p></>{producto.sinopsis}</Card.Text>                                   
+                                   <Card.Text>Precio: ${producto.precio}</Card.Text>
                                    <Card.Text>Stock: {producto.stock}</Card.Text>
                                    {
                                        (mostrarBoton) ?

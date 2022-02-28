@@ -20,10 +20,10 @@ export default function Item({ item }) {
     return (
         <>      
             <Card style={{ width: '18rem' }} id = "centrarTexto">
-                <Card.Img id = "imgProducto" variant="top" src= {item.src} />
+                <Card.Img id = "imgProducto" variant="top" src= {item.imagen} />
                 <Card.Body>
                     <Card.Title id = "tituloProducto">{item.titulo}</Card.Title>
-                    <Card.Text>{item.precio}</Card.Text>
+                    <Card.Text>Precio: ${item.precio}</Card.Text>
                     <Card.Text>Stock: {item.stock}</Card.Text>
                     <div className="botones">
                     <Link id="btn" to={`/item/${item.id}`}>Ver detalle</Link>
