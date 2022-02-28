@@ -17,11 +17,11 @@ export default function Footer({ arrayDeLink }) {
 
                         <div className="col-md-3 mb-md-0 mb-3">
                             <h5 className="text-uppercase" id="letrasBlancas">Enlaces</h5>
-                            <ul className="list-unstyled">
+                            <ul className="list-unstyled" id = "footerLista">
                                 {arrayDeLink.map(link => {
-                                    return <Link to={link.enlace} id="letrasBlancas"> {link.seccion}</Link>
+                                    return <Link to={link.enlace} id="listaBlanca"> {link.seccion}</Link>
                                 })}
-                                <Link to="/carrito" id="letrasBlancas">Carrito</Link>
+                                <Link to="/carrito" id="listaBlanca">Carrito</Link>
                             </ul>
                         </div>
 

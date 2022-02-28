@@ -11,7 +11,6 @@ export default function Item({ item }) {
 
     function onAdd({ cantidad }) {
           
-          alert("Quiero agregar " + cantidad + " ejemplares de " + item.titulo);
           addCarrito(item, cantidad);
           setMostrarBoton(false);
         
@@ -22,7 +21,7 @@ export default function Item({ item }) {
             <Card style={{ width: '18rem' }} id = "centrarTexto">
                 <Card.Img id = "imgProducto" variant="top" src= {item.imagen} />
                 <Card.Body>
-                    <Card.Title id = "tituloProducto">{item.titulo}</Card.Title>
+                    <Card.Title ><p id = "tituloProducto">{item.titulo}</p></Card.Title>
                     <Card.Text>Precio: ${item.precio}</Card.Text>
                     <Card.Text>Stock: {item.stock}</Card.Text>
                     <div className="botones">
@@ -34,7 +33,7 @@ export default function Item({ item }) {
                                            <ItemCount tope={item.stock} onAdd={onAdd} />
                                            :
                                            <div className="botones">
-                                               <Link to= "/carrito">Terminar mi compra</Link>                    
+                                               <Link to= "/carrito" id="terminar">Terminar mi compra</Link>                    
                                            </div>                                       
                                    }
                     </div>                    

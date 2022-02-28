@@ -18,12 +18,12 @@ export default function ItemCount({tope, onAdd}) {
 
         <>
             <div className="botones">
-                <Button variant="primary" onClick={() => onAdd({cantidad})}>Agregar al carrito</Button>
+                <Button variant="primary" onClick={() => onAdd({cantidad})} id="btnAgregar">Agregar al carrito</Button>
             </div>
             <div className="estiloCont">
-                <button onClick={() => restar()}> - </button>
-                {cantidad}
-                <button onClick={() => sumar()}> + </button>
+                <button onClick={() => restar()} id="btnContador">-</button>
+                <div id="negrita">{cantidad}</div>
+                <button onClick={() => sumar()} id="btnContador">+</button>
             </div>
         </>
 )

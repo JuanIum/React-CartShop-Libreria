@@ -12,7 +12,6 @@ export default function ItemDetail({ producto }) {
        
     function onAdd({ cantidad }) {
           
-          alert("Quiero agregar " + cantidad + " ejemplares de " + producto.titulo);
           addCarrito(producto, cantidad);
           setMostrarBoton(false);
         
@@ -36,7 +35,7 @@ export default function ItemDetail({ producto }) {
                                            <ItemCount tope={producto.stock} onAdd={onAdd} />
                                            :
                                            <div className="botones">
-                                               <Link to= "/carrito">Terminar mi compra</Link>                    
+                                               <Link to= "/carrito" id="terminar">Terminar mi compra</Link>                    
                                            </div>                                       
                                    }
                                </Card.Body>

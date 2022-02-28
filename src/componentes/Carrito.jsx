@@ -11,12 +11,15 @@ const Carrito = () => {
     return (
         <>
             {carrito.length === 0 ?
-            <div>
-                <p>No agregaste nada al carrito</p>
-                <Link to="/" >Volver a la página principal</Link>
-            </div>
+                <div id="bloqueCentrado">
+                    <div id="centrarTexto2">
+                        <p id="negrita">No agregaste nada al carrito aun...</p>
+                        <Link to="/" id="negrita1">Volver a la página principal</Link>
+                    </div>
+                </div>
             :
-            <div className="mostrarCarrito">
+                <div className="mostrarCarrito">
+                    <h1>Resumen de compra: </h1>
                     {carrito.map(element => <CarritoItem key={element.item.id} producto={element} />)}
                     <h1>Cantidad total: {cantidadTotal()}</h1>
                     <h1>Monto total: ${sumaTotal()}</h1>                   
