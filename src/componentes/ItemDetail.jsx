@@ -21,10 +21,10 @@ export default function ItemDetail({ producto }) {
             <div>
                    {(producto.id) ?
                        <>{
-                           <Card style={{ width: '18rem' }}>
-                               <Card.Img variant="top" src={producto.imagen} alt = "imagen producto"/>
+                           <Card style={{ width: '30rem' }}>
                                <Card.Body>
-                                   <Card.Title><><p> <strong>Título: </strong></p></> <p id = "tituloProducto">{producto.titulo}</p></Card.Title>
+                                   <Card.Title><><p> <strong>Título: </strong></p></> <p id = "tituloDetail">{producto.titulo}</p></Card.Title>
+                                    <Card.Img  id="imgDetail" src={producto.imagen} alt = "imagen producto"/>                               
                                    <Card.Text><><strong>Autor/a: </strong></> {producto.autor}</Card.Text>
                                    <Card.Text><><strong>Año de publicación: </strong></> {producto.año}</Card.Text> 
                                    <Card.Text><><p> <strong>Sinopsis: </strong></p></> <p id = "sinopsis">{producto.sinopsis}</p></Card.Text>                                   

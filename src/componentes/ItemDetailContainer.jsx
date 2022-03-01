@@ -2,24 +2,20 @@ import React, {useState, useEffect} from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import { getFirestore } from '../firebase/firebase'
-
+import Loader from "./Loader";
 
 export default function ItemDetailContainer() {
 
-    
+    const [loading, setLoading] = useState(false);
     const { itemId } = useParams();
     const [producto, setProducto] = useState({});
     
     useEffect(() => {
-        
-
+      setLoading(true);
         const db = getFirestore();
-
         const itemCollection = db.collection("items");
-
         const miItem = itemCollection.doc(itemId);
         
- 
         miItem.get()    
       
             .then((doc) => {
@@ -33,16 +29,15 @@ export default function ItemDetailContainer() {
         setProducto({ id: doc.id, ...doc.data() });
 
       })
-      .catch((err)=>{
-        console.log(err);
-      })            
+        .catch((err) => { console.log(err); })
+        .finally(() => setLoading(false))      
       
     }, [itemId])
 
         return (
             <>
                 <div className="flex">
-                    <ItemDetail producto={producto} />
+                  {loading ? <Loader/> : <ItemDetail producto={producto} />}
                 </div>
             </>
 )

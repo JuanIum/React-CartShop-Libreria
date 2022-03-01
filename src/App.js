@@ -8,7 +8,7 @@ import ItemDetailContainer from "./componentes/ItemDetailContainer";
 import Categoria from "./componentes/Categoria";
 import Carrito from "./componentes/Carrito";
 import CarritoProvider from './contex/CarritoProvider';
-import Contacto from './componentes/Contacto';
+import Contactenos from './componentes/Contactenos';
 
 function App() {
 
@@ -41,7 +41,7 @@ function App() {
             </Route>
 
             <Route exact path= "/contacto">
-              <Contacto />
+              <Contactenos />
             </Route>
 
           </Switch>

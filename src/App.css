@@ -140,6 +140,16 @@ font-weight: bold;
 padding: 5px;
 }
 
+#tituloDetail{
+background-color: rgb(241, 239, 97);
+color: rgb(10, 53, 10);
+width: auto;
+font-size: 20px;
+text-align: center;
+font-weight: bold;
+padding: 5px;
+}
+
 #tituloCarrito{
 background-color: rgb(241, 238, 10);
 color: rgb(10, 53, 10);
@@ -170,6 +180,15 @@ text-align: center;
 
 #sinopsis{
 font-style: italic;
+}
+
+#contactenos{
+display: flex;
+justify-content: center;
+width: 100%;
+text-align: center;
+margin-top: 3%;
+margin-bottom: 3%;
 }
 
 #parrafoForm{
@@ -336,10 +355,18 @@ padding-bottom: 10%;
 }
 
 .botones{
-width: 90%;
+width: 100%;
 display: flex;
 flex-direction: column;
 align-items: center;
+}
+
+#imgDetail{
+height: 200px;
+text-align: center;
+align-items: center;
+margin-bottom: 1%;
+width: auto;
 }
 
 .btn1{

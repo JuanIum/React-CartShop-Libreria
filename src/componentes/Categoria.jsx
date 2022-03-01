@@ -2,15 +2,17 @@ import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import Item from "./Item.jsx"
 import { getFirestore } from '../firebase/firebase'
+import Loader from "./Loader";
 
 export default function Categoria() {
-
+  
+    const [loading, setLoading] = useState(false);
     const { categoriaId } = useParams();
     const [arrayDeProductos, setArraydeProductos] = useState([]);
        
     useEffect(() => {
         
-        
+    setLoading(true);
     const db = getFirestore();
     const itemCollection = db.collection("items").where("categoria", "==", categoriaId);
     
@@ -29,10 +31,8 @@ export default function Categoria() {
         ));
         
       })
-      .catch((err)=>{
-        console.log(err);
-      })  
-        
+      .catch((err)=>{console.log(err);})  
+      .finally(() => setLoading(false)) 
         console.log(categoriaId)
 
     }, [categoriaId]);
@@ -40,11 +40,7 @@ export default function Categoria() {
  return (
         <>
             <div className="flex">
-                    {
-                        arrayDeProductos.map(item => {
-                            return <Item key={item.id} item={item} />
-                        })
-                    }
+                    { loading ? <Loader/> : arrayDeProductos.map(item => {return <Item key={item.id} item={item} />})}
             </div>     
         </>
 )}
