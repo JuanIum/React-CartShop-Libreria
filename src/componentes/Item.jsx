@@ -19,7 +19,7 @@ export default function Item({ item }) {
     return (
         <>      
             <Card style={{ width: '18rem' }} id = "centrarTexto">
-                <Card.Img id = "imgProducto" variant="top" src= {item.imagen} />
+                <Card.Img id = "imgProducto" variant="top" src= {item.imagen} alt = "imagen producto"/>
                 <Card.Body>
                     <Card.Title ><p id = "tituloProducto">{item.titulo}</p></Card.Title>
                     <Card.Text>Precio: ${item.precio}</Card.Text>

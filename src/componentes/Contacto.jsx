@@ -51,28 +51,35 @@ export default function Contacto() {
         <>
             {orderId && (<h1>Felicitaciones tu order se registro bajo el ID: {orderId}</h1>)}
 
-            <div>
-                <h3>Ingresa tus datos:</h3>
+            <div id="contactoForm">
+                <h3 id = "tituloForm">Ingresá tus datos:</h3>
+                <br />
 
                 <input type="text" name="name" ref={nameRef} placeholder="Nombre y Apelllido" />
                 <br />
-
+                <br />
+                
                 <input type="text" name="mobile" ref={mobileRef} placeholder="Nro de Celular" />
                 <br />
-
+                <br />
+                
                 <input type="text" name="email" ref={emailRef} placeholder="Email" />
+                <br />
                 <br />
 
                 <input type="text" name="state" ref={stateRef} placeholder="Provincia" />
                 <br />
+                <br />
 
                 <input type="text" name="city" ref={cityRef} placeholder="Ciudad" />
+                <br />
                 <br />
 
                 <input type="text" name="address" ref={addressRef} placeholder="Direccion" />
                 <br />
+                <br />
 
-                <button onClick={() => handleClick()} >Registrarse</button>
+                <button onClick={() => handleClick()} id="btnForm">Enviar datos</button>
             </div>
         </>
     )

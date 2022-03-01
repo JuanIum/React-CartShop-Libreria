@@ -22,14 +22,14 @@ export default function ItemDetail({ producto }) {
                    {(producto.id) ?
                        <>{
                            <Card style={{ width: '18rem' }}>
-                               <Card.Img variant="top" src={producto.imagen} />
+                               <Card.Img variant="top" src={producto.imagen} alt = "imagen producto"/>
                                <Card.Body>
-                                   <Card.Title>Título: {producto.titulo}</Card.Title>
-                                   <Card.Text>Autor/a: {producto.autor}</Card.Text>
-                                   <Card.Text>Año de publicación: {producto.año}</Card.Text> 
-                                   <Card.Text><><p>Sinopsis:</p></>{producto.sinopsis}</Card.Text>                                   
-                                   <Card.Text>Precio: ${producto.precio}</Card.Text>
-                                   <Card.Text>Stock: {producto.stock}</Card.Text>
+                                   <Card.Title><><p> <strong>Título: </strong></p></> <p id = "tituloProducto">{producto.titulo}</p></Card.Title>
+                                   <Card.Text><><strong>Autor/a: </strong></> {producto.autor}</Card.Text>
+                                   <Card.Text><><strong>Año de publicación: </strong></> {producto.año}</Card.Text> 
+                                   <Card.Text><><p> <strong>Sinopsis: </strong></p></> <p id = "sinopsis">{producto.sinopsis}</p></Card.Text>                                   
+                                   <Card.Text><><strong>Precio: </strong>$</>{producto.precio}</Card.Text>
+                                   <Card.Text><><strong>Stock: </strong></> {producto.stock}</Card.Text>
                                    {
                                        (mostrarBoton) ?
                                            <ItemCount tope={producto.stock} onAdd={onAdd} />
@@ -42,7 +42,7 @@ export default function ItemDetail({ producto }) {
                            </Card>
                        }</>
                        :
-                       <>Procesando...</>
+                       <><p id="negrita">Procesando...</p></>
                 }
             </div>
         </>
