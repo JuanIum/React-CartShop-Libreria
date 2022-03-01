@@ -19,17 +19,20 @@ const Carrito = () => {
                 </div>
             :
                 <div className="mostrarCarrito">
-                    <h1>Resumen de compra: </h1>
-                    {carrito.map(element => <CarritoItem key={element.item.id} producto={element} />)}
-                    <h1>Cantidad total: {cantidadTotal()}</h1>
-                    <h1>Monto total: ${sumaTotal()}</h1>                   
-                    <div>
-                        <p>Registrate y finalizá tu compra!</p>                        
-                        <Contacto />
+                    <h1 id="tituloProducto">Resumen de compra: </h1>
+                    <div id="tabla">
+                        {carrito.map(element => <CarritoItem key={element.item.id} producto={element} />)}
                     </div>
-                    <button onClick={() => { borrarCarrito() }}>Vaciar Carrito</button>
-            </div>}          
-        </>
+                        <h1>Cantidad total: {cantidadTotal()}</h1>
+                        <h1>Monto total: ${sumaTotal()}</h1>
+                        <div>
+                            <p>Registrate y finalizá tu compra!</p>
+                            <Contacto />
+                        </div>
+                        <button onClick={() => { borrarCarrito() }} id="btnVaciar">Vaciar Carrito</button>
+                </div>}
+
+                </>
 )}
 
 

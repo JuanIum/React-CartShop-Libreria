@@ -8,12 +8,12 @@ const CarritoItem = ({producto}) => {
 
     return (
         <>
-            <div key={producto.item.id}>
+            <div key={producto.item.id} className="bordeBlanco">
                 <img src={producto.item.imagen} alt="imagen producto" />
                 <h3>{producto.item.titulo}</h3>
-                <p>Cantidad: {producto.cantidad}</p>
-                <p>Subtotal: ${producto.cantidad*producto.item.precio}</p>
-                <button onClick={() => borrarProducto(producto.item.id)}>Borrar</button>
+                <p>Cantidad: <strong>{producto.cantidad}</strong></p>
+                <p>Subtotal: <strong>${producto.cantidad*producto.item.precio}</strong></p>
+                <button onClick={() => borrarProducto(producto.item.id)} id="botonCarrito">Borrar</button>
             </div>
         </>
 )

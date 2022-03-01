@@ -30,9 +30,54 @@ font-weight: bold;
 
 
 .mostrarCarrito{
+display: flex;
+flex-direction: column;
+justify-content: center;
 text-align: center;
-background-color: tomato;
+background-color: rgb(231, 207, 199);
+}
 
+#tabla{
+width: 33%;
+justify-self: center;
+align-self: center;
+background-color: rgb(17, 17, 17);
+color: whitesmoke;
+text-align: center;
+}
+
+#btnVaciar{
+width: 13%;
+margin-top: 3%;
+margin-bottom: 3%;
+align-self: center;
+background-color: rgb(182, 3, 12);
+border-radius: 9px;
+font-weight: bold;
+padding: 1%;
+align-self: center;
+justify-self: center;
+height: auto;
+color: whitesmoke;
+text-decoration: none;
+font-size: 20px;
+}
+
+.bordeBlanco{
+border: 2px solid white;
+padding: 2%;
+}
+
+#botonCarrito{
+background-color: rgb(182, 3, 12);
+border-radius: 9px;
+font-weight: bold;
+padding: 1%;
+align-self: center;
+justify-self: center;
+height: auto;
+color: whitesmoke;
+text-decoration: none;
 }
 
 #contadorCart{
